@@ -13,6 +13,9 @@ if __name__ == '__main__':
     try:
         draw(parsing(read_data(filename)))
     except ValueError:
+        # Ошибка поднимается из модулей reader, formater
         print('Формат не валиден')
     except IOError:
+        # Ошибка поднимается из модуля reader,
+        # когда файл не найден или любая другая ошибка ОС при открытии файла
         print('Файл не валиден')
