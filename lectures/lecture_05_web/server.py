@@ -4,7 +4,7 @@ from flask import Flask, abort, request, jsonify
 
 # export FLASK_ENV=development
 # export FLASK_APP=server.py
-# flask run
+# flask run --host=127.0.0.1
 app = Flask(__name__)
 filename = '/tmp/technoatom_lecture_05_web.tsv'
 memory = {}
@@ -17,10 +17,10 @@ except IOError:
     pass
 
 
-#token = requests.post(
+#requests.post(
 #     'http://127.0.0.1:5000/auth', 
 #     json={'name': 'Zarina', 'surname': 'Sayfullina'}
-# ).json()['token']
+# ).json()
 @app.route('/auth', methods=['POST'])
 def auth():
     content = request.json
